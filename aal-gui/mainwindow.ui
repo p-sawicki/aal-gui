@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>444</width>
+    <height>348</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Aal project gui</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableView" name="bricksTableView"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="unsolveButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="loadingLabel">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="depthLabel">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timeLabel">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>444</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBricks">
+    <property name="title">
+     <string>&amp;Bricks</string>
+    </property>
+    <addaction name="actionNewBrick"/>
+    <addaction name="actionDeleteBrick"/>
+    <addaction name="actionClear"/>
+    <addaction name="actionImportBricks"/>
+    <addaction name="actionExportBricks"/>
+    <addaction name="actionGenerate"/>
+   </widget>
+   <widget class="QMenu" name="menuSolve">
+    <property name="title">
+     <string>&amp;Solve</string>
+    </property>
+    <addaction name="actionDynamic_Programming"/>
+    <addaction name="actionGraph_based_Algorithm"/>
+    <addaction name="actionBrute_Force"/>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>&amp;Test</string>
+    </property>
+    <addaction name="actionTest"/>
+   </widget>
+   <addaction name="menuBricks"/>
+   <addaction name="menuSolve"/>
+   <addaction name="menuTest"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewBrick"/>
+   <addaction name="actionDeleteBrick"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionImportBricks"/>
+   <addaction name="actionExportBricks"/>
+   <addaction name="actionGenerate"/>
+   <addaction name="actionTest"/>
+  </widget>
+  <action name="actionNewBrick">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a brick</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionDeleteBrick">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove selected bricks</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionImportBricks">
+   <property name="text">
+    <string>&amp;Import</string>
+   </property>
+   <property name="toolTip">
+    <string>Load bricks from a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionExportBricks">
+   <property name="text">
+    <string>&amp;Export</string>
+   </property>
+   <property name="toolTip">
+    <string>Store bricks in a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="text">
+    <string>&amp;Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove all bricks</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionDynamic_Programming">
+   <property name="text">
+    <string>&amp;Dynamic Programming</string>
+   </property>
+   <property name="toolTip">
+    <string>Solve using dynamic programming</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionGraph_based_Algorithm">
+   <property name="text">
+    <string>&amp;Graph Topology Sort</string>
+   </property>
+   <property name="toolTip">
+    <string>Solve using topology sort on a graph</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionBrute_Force">
+   <property name="text">
+    <string>&amp;Brute Force</string>
+   </property>
+   <property name="toolTip">
+    <string>Solve using brute force</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionGenerate">
+   <property name="text">
+    <string>&amp;Generate</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate random bricks</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionTest">
+   <property name="text">
+    <string>T&amp;est</string>
+   </property>
+   <property name="toolTip">
+    <string>Test using random test cases and chart the results</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

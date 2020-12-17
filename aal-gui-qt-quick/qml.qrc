@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BrickInfoDialog.qml</file>
+        <file>DoubleSpinbox.qml</file>
+        <file>GenerateDialog.qml</file>
+        <file>TestDialog.qml</file>
+    </qresource>
+</RCC>
